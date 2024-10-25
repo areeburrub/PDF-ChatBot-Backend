@@ -12,6 +12,7 @@ app = FastAPI(title="PDF Chat API")
 # Configure CORS
 origins = [
     "http://localhost:3000",  # Your frontend URL
+    "https://pdf-chat-bot-frontend.vercel.app",
     # Add any other allowed origins (frontend URLs) here
 ]
 
@@ -29,4 +30,5 @@ app.include_router(chat.router, prefix="/v1")
 
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(app, host="0.0.0.0", port=8000)
