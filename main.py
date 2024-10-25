@@ -26,3 +26,7 @@ app.add_middleware(
 # Include routers
 app.include_router(upload.router, prefix="/v1")
 app.include_router(chat.router, prefix="/v1")
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app)
