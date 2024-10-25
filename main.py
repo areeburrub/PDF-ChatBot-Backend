@@ -28,6 +28,13 @@ app.add_middleware(
 app.include_router(upload.router, prefix="/v1")
 app.include_router(chat.router, prefix="/v1")
 
+
+# Backend Status
+@app.get("/")
+async def root():
+    return {"message": "PDF Chat Backend Online"}
+
+
 if __name__ == "__main__":
     import uvicorn
 
